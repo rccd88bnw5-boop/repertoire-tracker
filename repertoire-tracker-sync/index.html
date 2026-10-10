@@ -41,7 +41,7 @@ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.
 // Cloud synchronization: authenticated by a server-validated shared code.
 // Server uses a revision to prevent lost updates. No code is embedded in public files.
 const syncCodeKey='repertoire-sync-code-v1';
-let syncCode=sessionStorage.getItem(syncCodeKey)||localStorage.getItem(syncCodeKey)||'';
+let syncCode=localStorage.getItem(syncCodeKey)
 let syncRevision=Number(localStorage.getItem('repertoire-sync-revision-v1')||0);
 let syncTimer=null,syncBusy=false,syncQueued=false;
 const status=t=>document.getElementById('syncStatus').textContent=t;
